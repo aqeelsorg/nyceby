@@ -1,0 +1,369 @@
+@charset "utf-8";
+/* CSS Document */
+#wrapper_main{
+	width: 60%;
+	right: 0px;
+		
+	margin: 0px 0px 0px 12%;	
+	width: 500px;
+	position: relative;	
+	
+	top:8%;
+}
+a.hiddenanchor{
+	display: none;
+}
+.change_link{
+	position: absolute;
+	color: rgb(127, 124, 124);
+	left: 0px;
+	height: 15px;
+	width: 380px;
+	padding: 9px 30px 16px 30px;
+	font-size: 13px	;
+	text-align: right;
+	border-top: 1px solid rgb(219, 229, 232);
+	-webkit-border-radius: 0 0  5px 5px;
+	   -moz-border-radius: 0 0  5px 5px;
+	        border-radius: 0 0  5px 5px;
+	bottom:0;
+	font-family:"museo700regular";
+	background:rgb(226, 226, 226);
+}
+#wrapper_main .change_link a {
+	display: inline-block;
+	font-weight: bold;
+	font-family:"museo700regular";
+	padding: 2px 6px;
+	color: rgb(29, 162, 193);
+	margin-left: 10px;
+	text-decoration: none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid rgb(203, 213, 214);
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s  linear;
+	-o-transition: all 0.4s linear;
+	-ms-transition: all 0.4s  linear;
+	transition: all 0.4s  linear;
+}
+#wrapper_main .change_link a:hover {
+	color: rgb(57, 191, 215);
+	background: rgb(247, 247, 247);
+	border: 1px solid rgb(74, 179, 198);
+}
+#wrapper_main .change_link a:active{
+	position: relative;
+	top: 1px;
+}
+/** Styling both forms **/
+#register, 
+#login{
+	position: absolute;
+	top: 0px;
+	width: 88%;	
+	padding: 5px 3% 15px 3%;
+	margin: 0 0 35px 0;
+
+	border: 1px solid rgba(147, 184, 189,0.8);
+	-webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	   -moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	        box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	-webkit-box-shadow: 5px;
+	-moz-border-radius: 5px;
+		 border-radius: 5px;
+}
+#register{	
+	z-index: 21;
+	opacity: 0;
+}
+#login{
+	z-index: 22;
+}
+#toregister:target ~ #wrapper_main #register,
+#tologin:target ~ #wrapper_main #login{
+	z-index: 22;
+	-webkit-animation-name: fadeInLeft;
+	-moz-animation-name: fadeInLeft;
+	-ms-animation-name: fadeInLeft;
+	-o-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+	-webkit-animation-delay: .1s;
+	-moz-animation-delay: .1s;
+	-o-animation-delay: .1s;
+	-ms-animation-delay: .1s;
+	animation-delay: .1s;
+}
+#toregister:target ~ #wrapper_main #login,
+#tologin:target ~ #wrapper_main #register{
+	-webkit-animation-name: fadeOutLeft;
+	-moz-animation-name: fadeOutLeft;
+	-ms-animation-name: fadeOutLeft;
+	-o-animation-name: fadeOutLeft;
+	animation-name: fadeOutLeft;
+}
+
+/** the actual animation, credit where due : http://daneden.me/animate/ ***/
+.animate{
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-fill-mode: both;
+	
+	-moz-animation-duration: 0.5s;
+	-moz-animation-timing-function: ease;
+	-moz-animation-fill-mode: both;
+	
+	-o-animation-duration: 0.5s;
+	-o-animation-timing-function: ease;
+	-o-animation-fill-mode: both;
+	
+	-ms-animation-duration: 0.5s;
+	-ms-animation-timing-function: ease;
+	-ms-animation-fill-mode: both;
+	
+	animation-duration: 0.5s;
+	animation-timing-function: ease;
+	animation-fill-mode: both;
+}
+
+/** yerk some ugly IE fixes 'cause I know someone will ask "why does it look ugly in IE?", no matter how many warnings I will put in the article */
+
+.lt8 #wrapper_main input{
+	padding: 10px 5px 10px 32px;
+    width: 92%;
+}
+.lt8 #wrapper_main input[type=checkbox]{
+	width: 10px;
+	padding: 0;
+}
+.lt8 #wrapper_main h1{
+	color: #066A75;
+}
+.lt8 #register{	
+	display: none;
+}
+.lt8 p.change_link,
+.ie9 p.change_link{
+	position: absolute;
+	height: 90px;
+	background: transparent;
+}
+.main_page_social
+{width: 36%;
+float: left;
+}
+.button_social {
+	width: 87px;
+display: block;
+padding: 6px;
+margin: 16px;
+float: left;
+font-size: 13px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+color: #FFF;
+margin-top: 34px;
+margin-bottom: 3px;
+margin-left: 21%;
+font-family:"museo700regular";
+	}
+ 
+/*
+* Changing the background color for each button
+*/
+.facebook_icon {
+	background:#3b5998;
+	}
+ 
+.twitter {
+	background:#00acee;
+	}
+ 
+.googleplus {
+	background:#dd4b39;
+	}
+	
+ul.sns-major
+{list-style-type:none;
+float: left;
+width: 34%;
+margin-bottom:35px;
+margin-left: 0%;
+}
+ul.sns-major button
+{padding: 6px 16px 0px 17px;
+float: left;
+height: 33px;
+border-radius: 3px;
+border: none;
+margin-left: 15px;
+margin-top:14px;
+}
+ul li button
+{width: 130px;
+}
+ul.sns-major .btn-f
+{background: #4C699E;
+color: #FFF;
+}
+ul.sns-major .btn-g
+{background: #da573b;
+color: #FFF;
+}
+ul.sns-major .btn-t
+{background: #1daee3;
+color: #FFF;
+}
+ul.sns-major .btn-f .icon
+{
+background-size: 250px 120px;
+background:url(../img/sign-new.png);
+}
+.icon.ic-fb i {
+background-position: 0 0;
+width: 28px;
+height: 22px;
+position: relative;
+left: -12px;
+top:-4px;
+float: left;
+}
+.icon.ic-gg i {
+background-position:-65px 0;
+width: 28px;
+height: 22px;
+position: relative;
+left: -4px;
+top:-4px;
+float: left;
+}
+.icon.ic-tw i {
+background-position:-35px 0;
+width: 28px;
+height: 22px;
+position: relative;
+left: -4px;
+top:-4px;
+float: left;
+}
+.icon i
+{background:url(../img/sign-new.png) no-repeat;
+background-size: 250px 120px;
+}
+ul.sns-major li b
+{
+font-size: 14px;
+}
+
+#register p{
+   margin-bottom: 17px;
+font-size: 13px;
+color:#494949;
+width: 100%;
+text-align: center;
+font-family:"museo700regular";
+}
+#register label {
+    display: inline-block;
+    text-align: left;
+    width: 25px;
+ font-size: 12px;
+color: #3F3F3F;
+}
+#register input {
+    border: 1px solid;
+border-color: #DADADA #CCC #D8D8D8;
+width: 82%;
+padding: 7px;
+-webkit-box-shadow: inset 1px 1px 8px #DDD;
+margin-left: 12.5%;
+float:left;
+margin-top:12px;
+border-radius:0px;
+font-size: 12px;
+line-height: 9px;
+}
+#register .bt_sign
+{float: right;
+margin-top: 18px;
+width: 23%;
+background: #E8E8E8;
+background: -moz-linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(121, 121, 121, 1)), color-stop(100%,rgba(39, 39, 39, 1)));
+background: -webkit-linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+background: -o-linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+background: -ms-linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+background: linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#cccccc',GradientType=0 );
+border-radius: 3px;
+border: 1px solid #5F5F5F;
+color: #F1F1F1;
+font-weight: bold;
+font-size: 12px;
+text-shadow: 1px 1px 0px #1D1D1D;
+padding:11px;
+box-shadow:none;
+}
+[19:00:51] montek mamta: #login p{
+   margin-bottom: 17px;
+font-size: 13px;
+color:#494949;
+width: 100%;
+text-align: center;
+font-family:"museo700regular";
+}
+#login .bt_sign
+{float: right;
+margin-top: 18px;
+width: 23%;
+margin-bottom: 33px;
+margin-right: 45%;
+background: #E8E8E8;
+background: -moz-linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(121, 121, 121, 1)), color-stop(100%,rgba(39, 39, 39, 1)));
+background: -webkit-linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+background: -o-linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+background: -ms-linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+background: linear-gradient(to bottom, rgba(121, 121, 121, 1) 2%,rgba(39, 39, 39, 1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#cccccc',GradientType=0 );
+border-radius: 3px;
+border: 1px solid #5F5F5F;
+color: #F1F1F1;
+font-weight: bold;
+font-size: 12px;
+text-shadow: 1px 1px 0px #1D1D1D;
+padding:11px;
+box-shadow:none;
+}
+#login label {
+    display: inline-block;
+    text-align: left;
+    width: 25px;
+ font-size: 12px;
+color: #3F3F3F;
+}
+#login input {
+  border: 1px solid;
+border-color: #DADADA #CCC #D8D8D8;
+width: 55%;
+margin-left: 13.5%;
+padding: 7px;
+-webkit-box-shadow: inset 1px 1px 8px #DDD;
+float: left;
+border-radius: 0px;
+font-size: 12px;
+line-height: 9px;
+}
+
+#register select
+{margin-left: 12%;
+width: 88%;
+height:31px;
+margin-top: 12px;
+color: #868686;
+font-size:12px;
+background: white;
+}
+	

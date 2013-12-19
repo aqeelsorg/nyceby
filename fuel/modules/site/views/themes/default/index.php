@@ -1,0 +1,1 @@
+<?php $this->load->module_view(SITE_FOLDER, $this->fuel_site->settings('theme_path').'home'); ?>

@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+.about_text {
+width: 95%;
+margin: 0 auto;
+height: 246px;
+background: url(../img/images78.jpg) repeat;
+overflow-x: scroll;
+}
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-button {
+	width: 8px;
+	height:5px;
+}
+::-webkit-scrollbar-track {
+	background:#FFF;
+	border: skinny plain lightgray;
+	box-shadow: 0px 0px 3px #dfdfdf inset;
+	border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+	background: #ECECEC;
+border-radius: 10px;
+border: 1px solid #CACACA;
+}
+::-webkit-scrollbar-thumb:hover {
+	background:#5F5F5F;
+}
+
+

@@ -1,0 +1,172 @@
+/* Based partially on Matthew Carroll's keyboard accessible flavor of Suckerfish 
+ * Dropdowns by Patrick Griffiths and Dan Webb. 
+ * http://carroll.org.uk/sandbox/suckerfish/bones2.html
+ */
+
+/* ----[ LINKS ]----*/
+
+/* all menu links */
+@font-face{ 
+            font-family: "museo700regular";
+            src: url('http://fontsforweb.com/public/fonts/14464/museo700regular.eot');
+            src: local("Museo700-Regular"), url('http://fontsforweb.com/public/fonts/14464/museo700regular.woff') format("woff"), url('http://fontsforweb.com/public/fonts/14464/museo700regular.ttf') format("truetype");
+        }
+#slide_nav a, #subMenusContainer a{
+	text-decoration:none;
+	display:block;
+	padding:10px 20px;
+	background-color:#fff ;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	background: url(../img/arrow_right.gif) right center no-repeat;
+	font-size:13px;
+	font-family:"museo700regular";
+}
+#slide_nav ul a
+{background:none;
+}
+
+/* Just main menu links --[for non-javascript users this applies to submenu links as well]*/
+#slide_nav a{
+	margin:0;
+}
+
+/* Just sub menu links */
+#subMenusContainer a, #slide_nav li li a{
+	text-align:left;
+}
+#slide_nav li:hover
+{background-color: #FFF;
+}
+/* All menu links on hover or focus */
+#slide_nav a:hover, #slide_nav a:focus, #subMenusContainer a:hover, #subMenusContainer a:focus, #slide_nav a.mainMenuParentBtnFocused, #subMenusContainer a.subMenuParentBtnFocused{
+	background-color: #FFF;
+color: #707070;
+}
+
+/* sub menu links on hover or focus */
+#subMenusContainer a:hover, 
+#subMenusContainer a:focus, 
+#slide_nav a.mainMenuParentBtnFocused, 
+#subMenusContainer a.subMenuParentBtnFocused,
+#slide_nav li a:hover,
+#slide_nav li a:focus{
+	background-color: #FFF;
+color: #707070;
+}
+
+/* Parent Sub Menu Links ---[javascript users only]*/
+.subMenuParentBtn{ 
+	background:url(../img/arrow_right.gif) right center no-repeat;  
+}
+
+/* Parent Sub Menu Links on hover or focus ---[javascript users only]*/
+.subMenuParentBtnFocused{ 
+	background: url(../img/arrow_right_over.gif) right center no-repeat;  
+}
+
+/* Parent Main Menu Links ---[javascript users only]*/
+.mainMenuParentBtn{	
+	 background: url(../img/arrow_right.gif) right center no-repeat; 
+}
+
+/* Parent Main Menu Links on hover or focus ---[javascript users only]*/
+.mainMenuParentBtnFocused{	
+	background: url(../img/arrow_right_over.gif) right center no-repeat; 
+}
+
+/* ----[ OLs ULs, LIs, and DIVs ]----*/
+
+/* Submenu Outer Wrapper - each submenu is inside a div with this class - javascript users only */
+.smOW{ 
+	display:none; 
+	position: absolute; 
+	overflow:hidden; 
+	/*the 2px left & right padding lets you have a 1px border 
+	  on the ul or ol inside since overflow is set to hidden*/
+	padding:0 2px;
+	margin:0 0 0 -2px;
+}
+
+/* All submenu OLs and ULs */
+#slide_nav ol, #slide_nav ul, #subMenusContainer ul, #subMenusContainer ol {	
+	/*border around submenu goes here*/
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+background: #FFF;
+/*border: 1px solid #D1D1D1;*/
+left: 0;
+}
+
+/* All ULs and OLs */
+#slide_nav, #slide_nav ul, #slide_nav ol, #subMenusContainer ul, #subMenusContainer ol { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1em;
+}
+
+/* List items in main menu --[for non-javascript users this applies to submenus as well]  */
+#slide_nav li { 
+	/*great place to use a background image as a divider*/
+	display:block;
+	list-style:none;
+	position:relative;
+}
+
+#subMenusContainer li{
+	list-style: none;
+}
+
+/* main menu ul or ol elment */
+#slide_nav{
+	
+position: absolute;
+list-style: none;
+margin: 0 0 0 -219px;
+width: 188px;
+z-index: 5;
+top:-11px;
+left: 24.5%;
+text-align: left;
+display: block;
+}
+
+#subMenusContainer{	display:block; 	position:absolute;	top:0;	left:0;	width:100%;	height:0;	overflow:visible;	z-index:1000000000; }
+
+
+/* --------------------------[ The below is just for non-javscript users ]--------------------------*/
+#slide_nav li li{	float:none; }
+
+#slide_nav li a
+{color:#111111;
+font-family: "museo700regular";
+}
+#slide_nav li li a{ /* Just submenu links*/	
+	position:relative;
+	float:left;
+	width: 100px;
+}
+
+#slide_nav li ul { /* second-level lists */
+	position: absolute;
+	width: 18em;
+	margin-left: -1000em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+/* third-and-above-level lists */
+#slide_nav li ul ul { margin: -1em 0 0 -1000em; }
+#slide_nav li:hover ul ul {	margin-left: -1000em; }
+
+ /* lists nested under hovered list items */
+#slide_nav li:hover ul{	margin-left: 188px;
+margin-top: -40px;}
+#slide_nav li li:hover ul {	margin-left: 10em; }
+
+/* extra positioning rules for limited noscript keyboard accessibility */
+#slide_nav li a:focus + ul {  margin-left: 186px; margin-top:-2.5em; }
+#slide_nav li li a:focus + ul { left:186px; margin-left: 1010em; margin-top:-2.5em;}
+#slide_nav li li a:focus {left:186px;  margin-left:1000em; width:10em;  margin-top:-2.5em;}
+#slide_nav li li li a:focus {left:186px; margin-left: 2010em; width: 10em;  margin-top:-2.5em;}
+#slide_nav li:hover a:focus{ margin-left: 0; }
+#slide_nav li li:hover a:focus + ul { margin-left: 10em; }
