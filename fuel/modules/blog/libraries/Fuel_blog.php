@@ -32,6 +32,7 @@ require_once(MODULES_PATH.'/blog/config/blog_constants.php');
 class Fuel_blog {
 	
 	private $_CI = NULL;
+	
 	private $_settings = NULL;
 
 	/**
