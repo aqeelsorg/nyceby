@@ -15,7 +15,7 @@ class Users_model extends Base_module_model {
 	
 	function valid_user($user, $pwd)
 	{
-		$where = array('user_name' => $user, 'password' => md5($pwd), 'active' => 'yes');
+		$where = array('email' => $user, 'password' => md5($pwd), 'active' => 'yes');
 		return $this->find_one_array($where);
 	}
 	
