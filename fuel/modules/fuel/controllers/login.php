@@ -142,22 +142,37 @@ class Login extends CI_Controller
 		
 		// build form
 		$this->form_builder->set_validator($this->users_model->get_validation());
+		
 		$fields['user_name'] = array('size' => 25);
+		
 		$fields['password'] = array('type' => 'password', 'size' => 25);
+		
 		$fields['forward'] = array('type' => 'hidden', 'value' => fuel_uri_segment(2));
+		
 		$this->form_builder->show_required = FALSE;
+		
 		$this->form_builder->submit_value = lang('login_btn');
+		
 		$this->form_builder->set_fields($fields);
+		
 		if (!empty($_POST)) $this->form_builder->set_field_values($_POST);
+		
 		$vars['form'] = $this->form_builder->render();
+		
 		
 		// notifications template
 		$vars['error'] = $this->users_model->get_errors();
+		
 		$notifications = $this->load->view('_blocks/notifications', $vars, TRUE);
+		
 		$vars['notifications'] = $notifications;
+		
 		$vars['display_forgotten_pwd'] = $this->config->item('allow_forgotten_password', 'fuel');
+		
 		$vars['page_title'] = lang('fuel_page_title');
+		
 		$this->load->view('login', $vars);
+		
 	}
 	
 	function pwd_reset()
