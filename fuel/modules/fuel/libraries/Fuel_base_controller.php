@@ -96,6 +96,7 @@ class Fuel_base_controller extends CI_Controller {
 		$this->_last_page();
 		
 	}
+	
 	protected function _check_login()
 	{
 		// set no cache headers to prevent back button problems in FF
@@ -105,8 +106,8 @@ class Fuel_base_controller extends CI_Controller {
 		$this->load->module_library(FUEL_FOLDER, 'fuel_auth');
 		
 		// check if logged in
-		if (!$this->fuel_auth->is_logged_in() OR !is_fuelified())
-		{
+		/*if (!$this->fuel_auth->is_logged_in() OR !is_fuelified())
+		{*/
 			$login = $this->config->item('fuel_path', 'fuel').'login';
 			
 			// logout officially to unset the cookie data
@@ -124,10 +125,10 @@ class Fuel_base_controller extends CI_Controller {
 				$this->output->set_output($output);
 				return;
 			}
-		}
+		/*}*/
 
-		
 	}
+	
 	protected function _validate_user($permission, $type = 'edit', $show_error = TRUE)
 	{
 		if (!$this->fuel_auth->has_permission($permission, $type))
