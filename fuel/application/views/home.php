@@ -4,7 +4,7 @@
 		$this->load->helper('html');
 		$this->load->helper('url');
 		$this->load->helper('form');
-		``
+
 ?>
 
 <body style="background:none;">
@@ -51,7 +51,7 @@ float: left;
 margin-left: 4%;">
 				<a class="close" data-dismiss="alert" style="background: none;
 top: 87px;
-left: 461px;">×</a>
+left: 461px;">ï¿½</a>
 				<?php echo $this->session->flashdata('login_message');?>
 			</div>
 		<?php endif;?>
@@ -135,39 +135,38 @@ font-weight: bold;float: left; margin-bottom:15px;
                     
 <?php if ($this->session->flashdata('message')):?>
 			<div class="alert alert-info">
-				<a class="close" data-dismiss="alert">×</a>
+				<a class="close" data-dismiss="alert">ï¿½</a>
 				<?php echo $this->session->flashdata('message');?>
 			</div>
 		<?php endif;?>
 		
 		<?php if ($this->session->flashdata('error')):?>
 			<div class="alert alert-error">
-				<a class="close" data-dismiss="alert">×</a>
+				<a class="close" data-dismiss="alert">ï¿½</a>
 				<?php echo $this->session->flashdata('error');?>
 			</div>
 		<?php endif;?>
 		
 		<?php if (!empty($error)):?>
 			<div class="alert alert-error">
-				<a class="close" data-dismiss="alert">×</a>
+				<a class="close" data-dismiss="alert">ï¿½</a>
 				<?php echo $error;?>
 			</div>
 		<?php endif;?>
 		
 		<?php if ($this->session->flashdata('registration_message')):?>
 			<div id="user_message"  class="alert alert-error">
-				<a class="close" data-dismiss="alert" style="top: 70px;">×</a>
+				<a class="close" data-dismiss="alert" style="top: 70px;">ï¿½</a>
 				<?php echo $this->session->flashdata('registration_message');?>
 			</div>
 		<?php endif;?>
 
 
-
 		<?php  
-                
                 $attributes = array('onsubmit' =>"return validateForm()");
-                echo form_open('user/register',$attributes);  ?>
                 
+                echo form_open('user/register',$attributes);  
+		?>
                 <div style="float: left;
 width: 62%;
 margin-left: 0%;">
@@ -253,7 +252,7 @@ margin-left: 0%;">
 				
 					<?php if ($this->session->flashdata('login_message')):?>
 			<div id="user_message"  class="alert alert-error">
-				<a class="close" data-dismiss="alert">×</a>
+				<a class="close" data-dismiss="alert">ï¿½</a>
 				<?php echo $this->session->flashdata('login_message');?>
 			</div>
 		<?php endif;?>				<!--<a href="#" class="da-link">Read more</a>-->
