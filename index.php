@@ -1,4 +1,5 @@
 <?php
+
 /*
  *---------------------------------------------------------------
  * FUEL INSTALL DIRECTORY
@@ -17,6 +18,8 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
+
+
 define('INSTALL_ROOT', str_replace('\\', '/', realpath(dirname(__FILE__))).'/fuel/');
 
 

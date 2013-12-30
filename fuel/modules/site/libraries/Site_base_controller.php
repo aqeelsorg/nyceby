@@ -18,9 +18,7 @@ class Site_base_controller extends CI_Controller
 		$this->load->module_config("site", 'site');
 
 		$this->load->module_library("site", 'fuel_site');
-		
-		
-	
+
 	}
 	
 	function _render($view, $vars = array(), $return = FALSE, $layout = '')

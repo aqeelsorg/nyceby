@@ -43,6 +43,7 @@ class Site extends Site_base_controller {
 		if (!empty($output))
 		{
 			$this->output->set_output($output);
+			
 			return;
 		}		
 	}
